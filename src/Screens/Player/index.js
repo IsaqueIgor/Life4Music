@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 
 import PlayerComponent from '../../Components/PlayerComponent';
 
@@ -7,6 +7,7 @@ export default class Player extends Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     let item = this.props.route.params.item;
     return (
@@ -20,5 +21,6 @@ export default class Player extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    color: '#fff',
   },
 });

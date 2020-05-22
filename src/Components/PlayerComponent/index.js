@@ -10,10 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import {Surface} from 'react-native-paper';
-import LinearGradient from 'react-native-linear-gradient';
 import {Slider} from 'react-native-elements';
-
-Icon.loadFont();
 
 const {width, height} = Dimensions.get('screen');
 
@@ -26,6 +23,10 @@ export default class PlayerComponent extends Component {
     };
   }
 
+  goBack = () => {
+    this.props.navigation.navigate('Home');
+  };
+
   componentDidMount() {
     this.setState({
       maxValue: this.props.item.duration / 60,
@@ -35,6 +36,11 @@ export default class PlayerComponent extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.headercontainer}>
+          <TouchableOpacity style={styles.headerButton} onPress={this.goBack}>
+            <Icon name="left" size={30} color="#000" />
+          </TouchableOpacity>
+        </View>
         <ScrollView>
           <View style={{height: height + 60}}>
             <Surface style={styles.surface}>
@@ -44,15 +50,34 @@ export default class PlayerComponent extends Component {
               <Text style={styles.title}>{this.props.item.title}</Text>
               <Text style={styles.subTitle}>{this.props.item.subTitle}</Text>
               <TouchableOpacity style={styles.btn}>
-                <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
-                  <Icon name="play" size={30} color="#fff" />
-                </LinearGradient>
+                <Icon name="play" size={30} color="#fff" />
               </TouchableOpacity>
             </View>
 
             <Text style={styles.text}>Queue</Text>
           </View>
         </ScrollView>
+
+        <View style={styles.main}>
+          <Slider
+            value={this.state.value}
+            minimumValue={0.0}
+            maximumValue={this.state.maxValue}
+            onValueChange={(value) => this.setState({value})}
+            thumbStyle={{backgroundColor: '#2b3FD0', height: 12, width: 12}}
+            thumbTintColor="red"
+            maximumTrackTintColor="#e5e5e5"
+            minimumTrackTintColor="#8b3FD0"
+            trackStyle={{backgroundColor: 'red', height: 1}}
+          />
+          <View style={styles.actions}>
+            <Icon name="swap" size={35} color="#6C2FD3" />
+            <Icon name="stepbackward" size={35} color="#6C2FD3" />
+            <Icon name="play" size={35} color="#6C2FD3" />
+            <Icon name="stepforward" size={35} color="#6C2FD3" />
+            <Icon name="sync" size={35} color="#6C2FD3" />
+          </View>
+        </View>
       </View>
     );
   }
@@ -63,6 +88,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
+  headercontainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    color: '#fff',
+  },
+  headerButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
   surface: {
     height: 200,
     width: 200,

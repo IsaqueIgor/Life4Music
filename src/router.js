@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Home from '../src/Screens/Home';
 import Discover from '../src/Screens/Discover';
+import Profile from '../src/Screens/Profile';
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +42,7 @@ function Tabs() {
       />
       <Tab.Screen
         name="Profile"
-        component={Home}
+        component={Profile}
         options={{
           tabBarIcon: ({color}) => (
             <Icon name={'user'} size={28} color={color} />
