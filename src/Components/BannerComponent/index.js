@@ -8,24 +8,24 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/FontAwesome';
 const {width, height} = Dimensions.get('window');
 
-import banners from '../../Data'
+import banners from '../../Data';
 
 export default class BannerComponent extends Component {
   constructor(props) {
     super(props);
   }
 
-  playSong = item => {
+  playSong = (item) => {
     this.props.navigation.navigate('Player', {item: item});
   };
 
-  render(){
+  render() {
     console.disableYellowBox = true; //Disable warnings
 
-    return(
+    return (
       <View style={styles.container}>
         <FlatList
           data={banners}
@@ -38,17 +38,17 @@ export default class BannerComponent extends Component {
                 <TouchableOpacity
                   style={styles.btn}
                   onPress={() => {
-                      this.playSong(item);
+                    this.playSong(item);
                   }}>
-                  <Icon name='play' size={18} color='#000' />
+                  <Icon name="play" size={18} color="#000" />
                   <Text style={styles.text}>Play Now</Text>
                 </TouchableOpacity>
               </ImageBackground>
             </View>
           )}
-          />
+        />
       </View>
-    )
+    );
   }
 }
 

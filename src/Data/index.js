@@ -19,7 +19,7 @@ let banners = [
   },
   {
     title: 'Nao Passa Vontade',
-    subTitle: 'Jess Jastro s2',
+    subTitle: 'Ao vivo',
     img: require('../assets/b3.jpg'),
     duration: 211.2,
   },

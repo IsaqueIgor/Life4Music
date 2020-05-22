@@ -1,8 +1,9 @@
 import React from 'react';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/AntDesign';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 import Home from '../src/Screens/Home';
+import Discover from '../src/Screens/Discover';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,25 +25,17 @@ function Tabs() {
         name="Home"
         component={Home}
         options={{
-          tabBarIcon: ({focused, color}) => (
-            <Icon
-              name={focused ? 'home' : 'home-outline'}
-              size={28}
-              color={color}
-            />
+          tabBarIcon: ({color}) => (
+            <Icon name={'home'} size={28} color={color} />
           ),
         }}
       />
       <Tab.Screen
         name="Discover"
-        component={Home}
+        component={Discover}
         options={{
-          tabBarIcon: ({focused, color}) => (
-            <Icon
-              name={focused ? 'compass' : 'compass-outline'}
-              size={28}
-              color={color}
-            />
+          tabBarIcon: ({color}) => (
+            <Icon name={'find'} size={28} color={color} />
           ),
         }}
       />
@@ -50,12 +43,8 @@ function Tabs() {
         name="Profile"
         component={Home}
         options={{
-          tabBarIcon: ({focused, color}) => (
-            <Icon
-              name={focused ? 'account' : 'account-outline'}
-              size={28}
-              color={color}
-            />
+          tabBarIcon: ({color}) => (
+            <Icon name={'user'} size={28} color={color} />
           ),
         }}
       />

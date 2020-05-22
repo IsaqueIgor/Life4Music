@@ -12,10 +12,10 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Life4Music</Text>
-          <ScrollView>
-            <Banner navigation={this.props.navigation}/>
-            <Text style={[styles.title, {marginTop: 0}]}>Songs</Text>
-          </ScrollView>
+        <ScrollView>
+          <Banner navigation={this.props.navigation} />
+          <Text style={[styles.title, {marginTop: 0}]}>Songs</Text>
+        </ScrollView>
       </View>
     );
   }

@@ -8,9 +8,12 @@ import {
   ScrollView,
   Dimensions,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/AntDesign';
 import {Surface} from 'react-native-paper';
+import LinearGradient from 'react-native-linear-gradient';
 import {Slider} from 'react-native-elements';
+
+Icon.loadFont();
 
 const {width, height} = Dimensions.get('screen');
 
@@ -29,27 +32,29 @@ export default class PlayerComponent extends Component {
     });
   }
 
-  render(){
+  render() {
     return (
       <View style={styles.container}>
         <ScrollView>
-            <View style={{height: height + 60}}>
-              <Surface style={styles.surface}>
-                <Image source={this.props.item.img} style={styles.img} />
-              </Surface>
-              <View style={styles.dataContainer}>
+          <View style={{height: height + 60}}>
+            <Surface style={styles.surface}>
+              <Image source={this.props.item.img} style={styles.img} />
+            </Surface>
+            <View style={styles.dataContainer}>
               <Text style={styles.title}>{this.props.item.title}</Text>
               <Text style={styles.subTitle}>{this.props.item.subTitle}</Text>
               <TouchableOpacity style={styles.btn}>
-                <Icon name="play" size={30} color="#fff" />
+                <LinearGradient colors={['#4c669f', '#3b5998', '#192f6a']}>
+                  <Icon name="play" size={30} color="#fff" />
+                </LinearGradient>
               </TouchableOpacity>
             </View>
 
             <Text style={styles.text}>Queue</Text>
-            </View>
+          </View>
         </ScrollView>
       </View>
-    )
+    );
   }
 }
 
@@ -85,10 +90,10 @@ const styles = StyleSheet.create({
     color: 'gray',
   },
   btn: {
-    height: 50,
-    width: 50,
+    height: 40,
+    width: 40,
     borderRadius: 25,
-    backgroundColor: '#ff5b77',
+    backgroundColor: '#6C2FD3',
     elevation: 10,
     marginTop: 10,
     justifyContent: 'center',
