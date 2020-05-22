@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text, ScrollView} from 'react-native';
 
+import Banner from '../../Components/BannerComponent';
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -10,6 +12,10 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>Life4Music</Text>
+          <ScrollView>
+            <Banner navigation={this.props.navigation}/>
+            <Text style={[styles.title, {marginTop: 0}]}>Songs</Text>
+          </ScrollView>
       </View>
     );
   }
