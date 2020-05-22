@@ -14,6 +14,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import * as Animatable from 'react-native-animatable';
 
 import Tabs from './src/router';
+import Player from './src/Screens/Player';
 
 class App extends Component {
   constructor(props) {
@@ -73,7 +74,7 @@ function Stacks() {
       />
       <Stack.Screen
         name="Player"
-        component={App}
+        component={Player}
         options={{
           headerShown: false,
         }}

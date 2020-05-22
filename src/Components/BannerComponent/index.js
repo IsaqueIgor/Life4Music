@@ -11,6 +11,7 @@ import {
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const {width, height} = Dimensions.get('window');
 
+import banners from '../../Data'
 
 export default class BannerComponent extends Component {
   constructor(props) {
@@ -23,27 +24,6 @@ export default class BannerComponent extends Component {
 
   render(){
     console.disableYellowBox = true; //Disable warnings
-
-    let banners = [
-      {
-        title: 'Metal City',
-        subTitle: 'Dead April',
-        img: require('../../assets/b1.jpg'),
-        duration: 201.6,
-      },
-      {
-        title: 'Return To Forever',
-        subTitle: '',
-        img: require('../../assets/b2.jpg'),
-        duration: 201.6,
-      },
-      {
-        title: 'Your Love Remains',
-        subTitle: 'The Rock Music',
-        img: require('../../assets/b4.jpg'),
-        duration: 191.2,
-      },
-    ];
 
     return(
       <View style={styles.container}>
