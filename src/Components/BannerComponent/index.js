@@ -11,7 +11,7 @@ import {
 import Icon from 'react-native-vector-icons/FontAwesome';
 const {width, height} = Dimensions.get('window');
 
-import banners from '../../Data';
+import banners from '../../Data/banners';
 
 export default class BannerComponent extends Component {
   constructor(props) {

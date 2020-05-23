@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import ProfileComponent from '../../Components/ProfileComponent';
 import {ScrollView} from 'react-native-gesture-handler';
+import SongsComponent from '../../Components/SongsComponent';
 
 class Profile extends Component {
   constructor(props) {
@@ -17,6 +18,7 @@ class Profile extends Component {
           <Text style={[styles.title, {marginTop: 10, fontSize: 18}]}>
             History
           </Text>
+          <SongsComponent navigation={this.props.navigation} />
         </ScrollView>
       </View>
     );
