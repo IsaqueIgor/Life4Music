@@ -14,7 +14,7 @@ let songs = [
   {
     title: "It's My Life",
     subTitle: 'Dr. Alban',
-    duration: 201.6,
+    duration: 215.6,
     img: require('../assets/s3.jpg'),
   },
   {

@@ -9,7 +9,8 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import BannerComponent from '../../Components/BannerComponent';
+import SongsComponent from '../../Components/SongsComponent';
+import CatogComponent from '../../Components/CatogComponent';
 
 export default class Discover extends Component {
   constructor(props) {
@@ -29,6 +30,8 @@ export default class Discover extends Component {
 
         <ScrollView>
           <Text style={[styles.title, {marginTop: 0}]}>Recently Searched</Text>
+          <SongsComponent navigation={this.props.navigation} />
+          <CatogComponent navigation={this.props.navigation} />
         </ScrollView>
       </View>
     );
