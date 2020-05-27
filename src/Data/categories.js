@@ -4,11 +4,11 @@ let categories = [
     img: require('../assets/c1.jpg'),
   },
   {
-    name: 'Metal',
+    name: 'Rap',
     img: require('../assets/c2.jpg'),
   },
   {
-    name: 'Rock',
+    name: 'Sertanejo',
     img: require('../assets/c3.jpg'),
   },
   {

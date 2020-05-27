@@ -35,7 +35,7 @@ export default class ProfileComponent extends Component {
         <View style={styles.info}>
           <Surface style={styles.surface}>
             <Image
-              source={require('../../assets/icon.png')}
+              source={require('../../assets/avatar.png')}
               style={styles.profile}
             />
           </Surface>

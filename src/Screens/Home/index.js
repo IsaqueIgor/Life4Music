@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {View, StyleSheet, Text, ScrollView} from 'react-native';
 
 import Banner from '../../Components/BannerComponent';
+import Catalog from '../../Components/CatogComponent';
+import Songs from '../../Components/SongsComponent';
 
 class Home extends Component {
   constructor(props) {
@@ -14,7 +16,9 @@ class Home extends Component {
         <Text style={styles.title}>Life4Music</Text>
         <ScrollView>
           <Banner navigation={this.props.navigation} />
+          <Catalog navigation={this.props.navigation} />
           <Text style={[styles.title, {marginTop: 0}]}>Songs</Text>
+          <Songs navigation={this.props.navigation} />
         </ScrollView>
       </View>
     );

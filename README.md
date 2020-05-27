@@ -15,3 +15,4 @@ This project was developed with the following technologies:
 - [React Native](https://facebook.github.io/react-native/)
 
 ## 🔖 Layout
+![Life4Music App Demo]('./readme_assets/gifdemo.gif)

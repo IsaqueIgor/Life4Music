@@ -12,6 +12,8 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import {Surface} from 'react-native-paper';
 import {Slider} from 'react-native-elements';
 
+import Songs from '../SongsComponent';
+
 const {width, height} = Dimensions.get('screen');
 
 export default class PlayerComponent extends Component {
@@ -55,6 +57,7 @@ export default class PlayerComponent extends Component {
             </View>
 
             <Text style={styles.text}>Queue</Text>
+            <Songs navigation={this.props.navigation} />
           </View>
         </ScrollView>
 
